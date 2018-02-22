@@ -1,0 +1,10 @@
+.row{
+	padding-top: 75px;
+}
+.col-lg-4{
+	display: inline-block;
+}
+.featurette-image{
+	
+    border-radius: 25px;
+}
