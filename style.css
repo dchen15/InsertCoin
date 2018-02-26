@@ -1,0 +1,86 @@
+ * {
+        box-sizing: border-box;
+        }
+        body {
+            background: white;
+            margin: 0;
+        }
+        .content {
+            max-width: 800px;
+            margin:52px auto;
+            background: grey;
+            padding: 10px;
+            border: 2px solid black;
+        }
+        .content img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .coins {
+            width: 500px;
+            height: 400px;
+            background-color: white;
+            margin: auto;
+            border-radius:5%;
+            border-color: black;
+            border: 1px solid;
+            float: left;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            color: black;
+        }
+        table {
+            margin:0 auto;
+            width: 400px;
+            height:400px;
+            background-color: white;
+            border-radius: 5%;
+            margin-top: 450px;
+        }
+        .previous {
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+            padding: 16px 32px;
+            float: left;
+            margin-left: 50px;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        
+        .next {
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+            padding: 16px 32px;
+            float: left;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #343a40;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        li {
+            float: left;
+        }
+        
+        li a{
+            display:block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 1.4em;
+            font-family: arial, sans-serif;
+        }
