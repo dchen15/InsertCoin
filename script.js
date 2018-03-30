@@ -5,15 +5,15 @@ app.config(function ($routeProvider, $locationProvider) {
     $routeProvider
 
         .when('/Bitcoin', {
-            templateUrl: "pages/Bitcoin.html",
+            templateUrl: "pages/CoinTemplate.html",
             controller: "BitcoinController"
         })
         .when('/Litecoin', {
-            templateUrl: "pages/Litecoin.html",
+            templateUrl: "pages/CoinTemplate.html",
             controller: "LitecoinController"
         })
         .when('/Burstcoin', {
-            templateUrl: "pages/Burstcoin.html",
+            templateUrl: "pages/CoinTemplate.html",
             controller: "BurstcoinController"
         })
         .otherwise({
@@ -23,12 +23,18 @@ app.config(function ($routeProvider, $locationProvider) {
 
 app.controller('BitcoinController', function ($scope) {
     $scope.message = "Angular Bitcoin";
+    $scope.next = "#/Litecoin"
+    $scope.previous = "#/Burstcoin"
 });
 
 app.controller('LitecoinController', function ($scope) {
     $scope.message = "Litecoin";
+    $scope.next = "#/Burstcoin"
+    $scope.previous = "#/Bitcoin"
 });
 
 app.controller('BurstcoinController', function ($scope) {
     $scope.message = "Burstcoin";
+    $scope.next = "#/Bitcoin"
+    $scope.previous = "#/Litecoin"
 });
