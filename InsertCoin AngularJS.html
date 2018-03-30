@@ -5,24 +5,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InsertCoin</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="Bitcoin.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
 </head>
 
 <body ng-app="Insert Coin">
-    <script type="text/ng-template" id="pages/Bitcoin.html">
+    <script type="text/ng-template" id="pages/CoinTemplate.html">
         <ul>
-            <li><a class="active" href="homepage.html">Insert Coin</a></li>
+            <li><a class="active" href="index.html">Insert Coin</a></li>
+            <li><a href="#/Bitcoin">Bitcoin</a></li>
+            <li><a href="#/Litecoin">Litecoin</a></li>
+            <li><a href="#/Burstcoin">Burstcoin</a></li>
         </ul>
         <div class="content">
             <img src="logo.png" alt="Insert Coin">
             <hr>
-            <a href="Ripple.html" class="previous">&#8249;</a>
+            <a href={{previous}} class="previous">&#8249;</a>
             <div class="coins">
                 {{message}}
             </div>
-            <a href="Litecoin.html" class="next">&#8250;</a>
+            <a href={{next}} class="next">&#8250;</a>
             <div class="table">
                 <table>
                     <tr>
@@ -44,26 +47,12 @@
                 </table>
             </div>
         </div>
-    </script>
 
-    <script type="text/ng-template" id="pages/Litecoin.html">
-        <h1>Litecoin test</h1>
-        <h2>{{message}}</h2>
-    </script>
-
-    <script type="text/ng-template" id="pages/Burstcoin.html">
-        <h1>Burstcoin test</h1>
-        <h2>{{message}}</h2>
     </script>
 
 
-    <a href="#/Bitcoin">Bitcoin</a>
-    <a href="#/Litecoin">Litecoin</a>
-    <a href="#/Burstcoin">Burstcoin</a>
     <div id="main">
-
-        <div ng-view></div>
-
+        <div class="ng-view"></div>
 
 
 
