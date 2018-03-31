@@ -1,5 +1,7 @@
 <html>
-<div id="btc"></div>
+<div id="btcBuying"></div><br>
+<div id="btcSelling"></div><br>
+<div id="btcVolume"></div>
 <script>
 var ws = new WebSocket("wss://api.bitfinex.com/ws");
 
@@ -11,8 +13,9 @@ ws.onmessage = function(msg){
 	var response = JSON.parse(msg.data);
 	var hb = response[1];
 	if(hb != "hb"){
-		document.getElementById("btc").innerHTML = "Buying Price: $" + response[3] +
-		"<br> Selling Price: $" + response[1];
+		document.getElementById("btcBuying").innerHTML = "Buying Price: $" + response[3]; 
+		document.getElementById("btcSelling").innerHTML = "Selling Price: $" + response[1];
+		document.getElementById("btcVolume") .innerHTML = "Volume: $" + response[8];
 		};
 	};
 </script>
