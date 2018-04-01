@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="Bitcoin.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+
 </head>
 
 <body ng-app="Insert Coin">
@@ -29,11 +30,11 @@
             <div class="table">
                 <table>
                     <tr>
-                        <td>stuff</td>
-                        <td>stuff</td>
+                        <td id={{cell1}}></td>
+                        <td id={{cell2}}></td>
                     </tr>
                     <tr>
-                        <td>stuff</td>
+                        <td id={{cell3}}></td>
                         <td>stuff</td>
                     </tr>
                     <tr>
@@ -47,9 +48,7 @@
                 </table>
             </div>
         </div>
-
     </script>
-
 
     <div id="main">
         <div class="ng-view"></div>
@@ -58,6 +57,7 @@
 
     </div>
     <script src="script.js"></script>
+
 </body>
 
 </html>
