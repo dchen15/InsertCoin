@@ -45,17 +45,17 @@ app.controller('BurstcoinController', function ($scope) {
     $scope.previous = "#/Litecoin";
 });
 
-var ws = new WebSocket("wss://api.bitfinex.com/ws");
+var BTCUSD = new WebSocket("wss://api.bitfinex.com/ws");
 
-ws.onopen = function () {
-    ws.send(JSON.stringify({
+BTCUSD.onopen = function () {
+    BTCUSD.send(JSON.stringify({
         "event": "subscribe",
         "channel": "ticker",
         "pair": "BTCUSD"
     }))
 };
 
-ws.onmessage = function (msg) {
+BTCUSD.onmessage = function (msg) {
     var response = JSON.parse(msg.data);
     var hb = response[1];
     if (hb != "hb") {
@@ -65,17 +65,17 @@ ws.onmessage = function (msg) {
     };
 };
 
-var ws1 = new WebSocket("wss://api.bitfinex.com/ws");
+var LTCUSD = new WebSocket("wss://api.bitfinex.com/ws");
 
-ws1.onopen = function () {
-    ws1.send(JSON.stringify({
+LTCUSD.onopen = function () {
+    LTCUSD.send(JSON.stringify({
         "event": "subscribe",
         "channel": "ticker",
         "pair": "LTCUSD"
     }))
 };
 
-ws1.onmessage = function (msg) {
+LTCUSD.onmessage = function (msg) {
     var response = JSON.parse(msg.data);
     var hb = response[1];
     if (hb != "hb") {
