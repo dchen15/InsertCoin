@@ -37,9 +37,12 @@ app.controller('LitecoinController', function ($scope) {
     $scope.message = "Litecoin";
     $scope.next = "#/Burstcoin";
     $scope.previous = "#/Bitcoin";
-    $scope.cell1 = "ltcBuyingUSD";
-    $scope.cell2 = "ltcSellingUSD";
-    $scope.cell3 = "ltcVolumeUSD";
+    $scope.cell1 = "ltcBuying";
+    $scope.cell2 = "ltcSelling";
+    $scope.cell3 = "ltcVolume";
+    $scope.cell4 = "ltcDaily";
+    $scope.cell5 = "ltcHigh";
+    $scope.cell6 = "ltcLow";
 });
 
 app.controller('BurstcoinController', function ($scope) {
@@ -86,8 +89,12 @@ LTCUSD.onmessage = function (msg) {
     var response = JSON.parse(msg.data);
     var hb = response[1];
     if (hb != "hb") {
-        document.getElementById("ltcBuyingUSD").innerHTML = "Buying Price: $" + response[3];
-        document.getElementById("ltcSellingUSD").innerHTML = "Selling Price: $" + response[1];
-        document.getElementById("ltcVolumeUSD").innerHTML = "Volume: $" + response[8];
+        document.getElementById("ltcBuying").innerHTML = "Buying Price: $" + response[3];
+        document.getElementById("ltcSelling").innerHTML = "Selling Price: $" + response[1];
+        document.getElementById("ltcVolume").innerHTML = "Volume: $" + response[8];
+        document.getElementById("ltcDaily").innerHTML = "Daily Change: $" + response[5];
+        document.getElementById("ltcHigh").innerHTML = "Daily High: $" + response[9];
+        document.getElementById("ltcLow").innerHTML =
+            "Daily Low: $" + response[10];
     };
 };
