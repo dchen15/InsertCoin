@@ -14,7 +14,7 @@ app.config(function ($routeProvider, $locationProvider) {
         })
         .when('/Burstcoin', {
             templateUrl: "pages/CoinTemplate.html",
-            controller: "BurstcoinController"
+            controller: "EthereumController"
         })
         .otherwise({
             redirectTo: "/Bitcoin"
@@ -24,7 +24,7 @@ app.config(function ($routeProvider, $locationProvider) {
 app.controller('BitcoinController', function ($scope) {
     $scope.message = "Angular Bitcoin";
     $scope.next = "#/Litecoin";
-    $scope.previous = "#/Burstcoin";
+    $scope.previous = "#/Ethereum";
     $scope.cell1 = "btcBuying";
     $scope.cell2 = "btcSelling";
     $scope.cell3 = "btcVolume";
@@ -35,7 +35,7 @@ app.controller('BitcoinController', function ($scope) {
 
 app.controller('LitecoinController', function ($scope) {
     $scope.message = "Litecoin";
-    $scope.next = "#/Burstcoin";
+    $scope.next = "#/Ethereum";
     $scope.previous = "#/Bitcoin";
     $scope.cell1 = "ltcBuying";
     $scope.cell2 = "ltcSelling";
@@ -45,10 +45,16 @@ app.controller('LitecoinController', function ($scope) {
     $scope.cell6 = "ltcLow";
 });
 
-app.controller('BurstcoinController', function ($scope) {
-    $scope.message = "Burstcoin";
+app.controller('EthereumController', function ($scope) {
+    $scope.message = "Ethereum";
     $scope.next = "#/Bitcoin";
     $scope.previous = "#/Litecoin";
+	$scope.cell1 = "ethBuying";
+	$scope.cell2 = "ethSelling";
+	$scope.cell3 = "ethVolume";
+	$scope.cell4 = "ethDaily";
+	$scope.cell5 = "ethHigh";
+	$scope.cell6 = "ethLow";
 });
 
 var BTCUSD = new WebSocket("wss://api.bitfinex.com/ws");
@@ -70,8 +76,7 @@ BTCUSD.onmessage = function (msg) {
         document.getElementById("btcVolume").innerHTML = "Daily Volume: $" + response[8];
         document.getElementById("btcDaily").innerHTML = "Daily Change: $" + response[5];
         document.getElementById("btcHigh").innerHTML = "Daily High: $" + response[9];
-        document.getElementById("btcLow").innerHTML =
-            "Daily Low: $" + response[10];
+        document.getElementById("btcLow").innerHTML = "Daily Low: $" + response[10];
     };
 };
 
@@ -94,7 +99,29 @@ LTCUSD.onmessage = function (msg) {
         document.getElementById("ltcVolume").innerHTML = "Daily Volume: $" + response[8];
         document.getElementById("ltcDaily").innerHTML = "Daily Change: $" + response[5];
         document.getElementById("ltcHigh").innerHTML = "Daily High: $" + response[9];
-        document.getElementById("ltcLow").innerHTML =
-            "Daily Low: $" + response[10];
+        document.getElementById("ltcLow").innerHTML = "Daily Low: $" + response[10];
+    };
+};
+
+var ETHUSD = new WebSocket("wss://api.bitfinex.com/ws");
+
+ETHUSD.onopen = function () {
+    ETHUSD.send(JSON.stringify({
+        "event": "subscribe",
+        "channel": "ticker",
+        "pair": "ETHUSD"
+    }))
+};
+
+ETHUSD.onmessage = function (msg) {
+    var response = JSON.parse(msg.data);
+    var hb = response[1];
+    if (hb != "hb") {
+        document.getElementById("ethBuying").innerHTML = "Buying Price: $" + response[3];
+        document.getElementById("ethSelling").innerHTML = "Selling Price: $" + response[1];
+        document.getElementById("ethVolume").innerHTML = "Daily Volume: $" + response[8];
+        document.getElementById("ethDaily").innerHTML = "Daily Change: $" + response[5];
+        document.getElementById("ethHigh").innerHTML = "Daily High: $" + response[9];
+        document.getElementById("ethLow").innerHTML = "Daily Low: $" + response[10];
     };
 };
