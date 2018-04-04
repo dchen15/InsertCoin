@@ -15,8 +15,53 @@
 
 #col-lg-4,img{
 	
-    
+ 
 	
+}
+
+.graph {
+	width: 500px;
+}
+
+#bitcoin {
+	float: none;
+	margin-left: 20px;
+}
+#litecoin {
+	float: none;
+	margin-left: 10px;
+}
+#nxt {
+	float: none;
+	margin-left: 35px;
+}
+#ripple {
+	float: none;
+	margin-left: 25px;
+}
+#dash {
+	float: none;
+	margin-left: 32px;
+}
+#monero {
+	float: none;
+	margin-left: 15px;
+}
+#tether {
+	float: none;
+	margin-left: 23px;
+}
+#qtum {
+	float: none;
+	margin-left: 23px;
+}
+#bitcon {
+	float: none;
+	margin-left: -10px;
+}
+#dogecoin {
+	float: none;
+	margin-left: 3px;
 }
 
 @media (max-width: 800px) {
