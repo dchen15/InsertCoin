@@ -12,7 +12,7 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: "pages/CoinTemplate.html",
             controller: "LitecoinController"
         })
-        .when('/Burstcoin', {
+        .when('/Ethereum', {
             templateUrl: "pages/CoinTemplate.html",
             controller: "EthereumController"
         })
@@ -22,7 +22,7 @@ app.config(function ($routeProvider, $locationProvider) {
 });
 
 app.controller('BitcoinController', function ($scope) {
-    $scope.message = "Angular Bitcoin";
+    $scope.message = "btcwdgt-chart"
     $scope.next = "#/Litecoin";
     $scope.previous = "#/Ethereum";
     $scope.cell1 = "btcBuying";
@@ -49,16 +49,17 @@ app.controller('EthereumController', function ($scope) {
     $scope.message = "Ethereum";
     $scope.next = "#/Bitcoin";
     $scope.previous = "#/Litecoin";
-	$scope.cell1 = "ethBuying";
-	$scope.cell2 = "ethSelling";
-	$scope.cell3 = "ethVolume";
-	$scope.cell4 = "ethDaily";
-	$scope.cell5 = "ethHigh";
-	$scope.cell6 = "ethLow";
+    $scope.cell1 = "ethBuying";
+    $scope.cell2 = "ethSelling";
+    $scope.cell3 = "ethVolume";
+    $scope.cell4 = "ethDaily";
+    $scope.cell5 = "ethHigh";
+    $scope.cell6 = "ethLow";
 });
 
-var BTCUSD = new WebSocket("wss://api.bitfinex.com/ws");
 
+// JS for coin api goes here
+var BTCUSD = new WebSocket("wss://api.bitfinex.com/ws");
 BTCUSD.onopen = function () {
     BTCUSD.send(JSON.stringify({
         "event": "subscribe",
@@ -125,3 +126,14 @@ ETHUSD.onmessage = function (msg) {
         document.getElementById("ethLow").innerHTML = "Daily Low: $" + response[10];
     };
 };
+
+// JS for coin graphs goes here
+(function (b, i, t, C, O, I, N) {
+    window.addEventListener('load', function () {
+        if (b.getElementById(C)) return;
+        I = b.createElement(i), N = b.getElementsByTagName(i)[0];
+        I.src = t;
+        I.id = C;
+        N.parentNode.insertBefore(I, N);
+    }, false)
+})(document, 'script', 'https://widgets.bitcoin.com/widget.js', 'btcwdgt');

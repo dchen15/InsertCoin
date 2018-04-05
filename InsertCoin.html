@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InsertCoin</title>
-    <link rel="stylesheet" href="Bitcoin.css">
+    <link rel="stylesheet" href="bitcoin.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
 
@@ -14,17 +14,17 @@
 <body ng-app="Insert Coin">
     <script type="text/ng-template" id="pages/CoinTemplate.html">
         <ul>
-            <li><a class="active" href="index.html">Insert Coin</a></li>
-            <li><a href="#/Bitcoin">Bitcoin</a></li>
-            <li><a href="#/Litecoin">Litecoin</a></li>
-            <li><a href="#/Burstcoin">Burstcoin</a></li>
+            <li><a href="index.html">Insert Coin</a></li>
+            <li class="hide"><a href="#/Bitcoin">Bitcoin</a></li>
+            <li class="hide"><a href="#/Litecoin">Litecoin</a></li>
+            <li class="hide"><a href="#/Burstcoin">Burstcoin</a></li>
         </ul>
         <div class="content">
             <img src="logo.png" alt="Insert Coin">
             <hr>
             <a href={{previous}} class="previous">&#8249;</a>
             <div class="coins">
-                {{message}}
+                <div class={{message}}></div>
             </div>
             <a href={{next}} class="next">&#8250;</a>
             <div class="table">
@@ -53,7 +53,6 @@
 
     </div>
     <script src="script.js"></script>
-
 </body>
 
 </html>
