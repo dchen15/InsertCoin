@@ -3,7 +3,7 @@
  }
 
  body {
-     background: #1276a8;
+     background: #275cbc;
      margin: 0;
  }
 
@@ -47,6 +47,7 @@
      border-collapse: collapse;
      text-align: center;
      color: black;
+	 
  }
 
  table {
