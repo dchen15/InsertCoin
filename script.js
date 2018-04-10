@@ -1,3 +1,10 @@
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
 var app = angular.module('Insert Coin', ['ngRoute']);
 
 app.config(function ($routeProvider, $locationProvider) {
