@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <title>InsertCoin</title>
     <link rel="stylesheet" href="Bitcoin.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -11,45 +11,50 @@
 
 </head>
 
-<body ng-app="Insert Coin">
+<body onload="myFunction()" style="margin:0;" ng-app="Insert Coin">
     <script type="text/ng-template" id="pages/CoinTemplate.html">
         <ul>
             <li><a href="index.html">Insert Coin</a></li>
             <li class="hide"><a href="#/Bitcoin">Bitcoin</a></li>
             <li class="hide"><a href="#/Litecoin">Litecoin</a></li>
-            <li class="hide"><a href="#/Burstcoin">Burstcoin</a></li>
+            <li class="hide"><a href="#/Ethereum">Ethereum</a></li>
             <li class="show"><span onclick="openNav()">&#9776;</span></li>
         </ul>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#">Bitcoin</a>
-            <a href="#">Litecoin</a>
-            <a href="#">Burstcoin</a>
+            <a href="#/Bitcoin">Bitcoin</a>
+            <a href="#/Litecoin">Litecoin</a>
+            <a href="#/Ethereum">Ethereum</a>
             <a href="#"></a>
         </div>
         <div class="content">
-            <img src="logo.png" alt="Insert Coin">
-            <hr>
-            <a href={{previous}} class="previous">&#8249;</a>
-            <div class="chart">
-                <div class={{message}}></div>
-            </div>
-            <a href={{next}} class="next">&#8250;</a>
-            <div class="table">
-                <table>
-                    <tr>
-                        <td id={{cell1}}>Loading...</td>
-                        <td id={{cell2}}>Loading...</td>
-                    </tr>
-                    <tr>
-                        <td id={{cell3}}>Loading...</td>
-                        <td id={{cell4}}>Loading...</td>
-                    </tr>
-                    <tr>
-                        <td id={{cell5}}>Loading...</td>
-                        <td id={{cell6}}>Loading...</td>
-                    </tr>
-                </table>
+            <div id="loader"></div>
+            <div style="display:none;" id="myDiv">
+                <img src="logo.png" alt="Insert Coin">
+                <hr>
+                <a href={{previous}} class="previous">&#8249;</a>
+                <div class="graph">
+                    <div class={{message}}></div>
+                </div>
+                <a href={{next}} class="next">&#8250;</a>
+
+                <div class="table">
+
+                    <table>
+                        <tr>
+                            <td id={{cell1}}>Loading...</td>
+                            <td id={{cell2}}>Loading...</td>
+                        </tr>
+                        <tr>
+                            <td id={{cell3}}>Loading...</td>
+                            <td id={{cell4}}>Loading...</td>
+                        </tr>
+                        <tr>
+                            <td id={{cell5}}>Loading...</td>
+                            <td id={{cell6}}>Loading...</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </script>

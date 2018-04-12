@@ -5,6 +5,17 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
+
+var myVar;
+
+function myFunction() {
+    myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("myDiv").style.display = "block";
+}
 var app = angular.module('Insert Coin', ['ngRoute']);
 
 app.config(function ($routeProvider, $locationProvider) {
@@ -135,6 +146,8 @@ ETHUSD.onmessage = function (msg) {
 };
 
 // JS for coin graphs goes here
+
+<!-- Bitcoin Graph -->
 (function (b, i, t, C, O, I, N) {
     window.addEventListener('load', function () {
         if (b.getElementById(C)) return;
