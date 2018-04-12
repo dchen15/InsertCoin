@@ -85,6 +85,9 @@
 	float: none;
 	margin-left: 3px;
 }
+.rounded-circle:hover {
+	transform: scale(1.1, 1.1);
+}
 
 @media (max-width: 800px) {
 	 .col-lg-4{
