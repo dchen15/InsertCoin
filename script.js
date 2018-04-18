@@ -25,6 +25,7 @@ app.config(function ($routeProvider, $locationProvider) {
         .when('/Bitcoin', {
             templateUrl: "pages/CoinTemplate.html",
             controller: "BitcoinController"
+
         })
         .when('/Litecoin', {
             templateUrl: "pages/CoinTemplate.html",
@@ -39,7 +40,10 @@ app.config(function ($routeProvider, $locationProvider) {
         });
 });
 
-app.controller('BitcoinController', function ($scope) {
+app.controller('BitcoinController', function ($scope, $route, $routeParams, $location) {
+    $scope.$route = $route;
+    $scope.$location = $location;
+    $scope.$routeParams = $routeParams;
     $scope.message = "btcwdgt-chart"
     $scope.next = "#/Litecoin";
     $scope.previous = "#/Ethereum";
@@ -49,6 +53,7 @@ app.controller('BitcoinController', function ($scope) {
     $scope.cell4 = "btcDaily";
     $scope.cell5 = "btcHigh";
     $scope.cell6 = "btcLow";
+
 });
 
 app.controller('LitecoinController', function ($scope) {
