@@ -150,6 +150,213 @@ ETHUSD.onmessage = function (msg) {
     };
 };
 
+var IOTUSD = new WebSocket("wss://api.bitfinex.com/ws");
+
+IOTUSD.onopen = function () {
+    IOTUSD.send(JSON.stringify({
+        "event": "subscribe",
+        "channel": "ticker",
+        "pair": "IOTUSD"
+    }))
+};
+
+IOTUSD.onmessage = function (msg) {
+    var response = JSON.parse(msg.data);
+    var hb = response[1];
+    if (hb != "hb") {
+        document.getElementById("iotBuying").innerHTML = "Buying Price: $" + response[3];
+        document.getElementById("iotSelling").innerHTML = "Selling Price: $" + response[1];
+        document.getElementById("iotVolume").innerHTML = "Daily Volume: $" + response[8];
+        document.getElementById("iotDaily").innerHTML = "Daily Change: $" + response[5];
+        document.getElementById("iotHigh").innerHTML = "Daily High: $" + response[9];
+        document.getElementById("iotLow").innerHTML = "Daily Low: $" + response[10];
+    };
+};
+
+var NEOUSD = new WebSocket("wss://api.bitfinex.com/ws");
+
+NEOUSD.onopen = function () {
+    NEOUSD.send(JSON.stringify({
+        "event": "subscribe",
+        "channel": "ticker",
+        "pair": "NEOUSD"
+    }))
+};
+
+NEOUSD.onmessage = function (msg) {
+    var response = JSON.parse(msg.data);
+    var hb = response[1];
+    if (hb != "hb") {
+        document.getElementById("neoBuying").innerHTML = "Buying Price: $" + response[3];
+        document.getElementById("neoSelling").innerHTML = "Selling Price: $" + response[1];
+        document.getElementById("neoVolume").innerHTML = "Daily Volume: $" + response[8];
+        document.getElementById("neoDaily").innerHTML = "Daily Change: $" + response[5];
+        document.getElementById("neoHigh").innerHTML = "Daily High: $" + response[9];
+        document.getElementById("neoLow").innerHTML = "Daily Low: $" + response[10];
+    };
+};
+
+var OMGUSD = new WebSocket("wss://api.bitfinex.com/ws");
+
+OMGUSD.onopen = function () {
+    OMGUSD.send(JSON.stringify({
+        "event": "subscribe",
+        "channel": "ticker",
+        "pair": "OMGUSD"
+    }))
+};
+
+OMGUSD.onmessage = function (msg) {
+    var response = JSON.parse(msg.data);
+    var hb = response[1];
+    if (hb != "hb") {
+        document.getElementById("omgBuying").innerHTML = "Buying Price: $" + response[3];
+        document.getElementById("omgSelling").innerHTML = "Selling Price: $" + response[1];
+        document.getElementById("omgVolume").innerHTML = "Daily Volume: $" + response[8];
+        document.getElementById("omgDaily").innerHTML = "Daily Change: $" + response[5];
+        document.getElementById("omgHigh").innerHTML = "Daily High: $" + response[9];
+        document.getElementById("omgLow").innerHTML = "Daily Low: $" + response[10];
+    };
+};
+
+var TRXUSD = new WebSocket("wss://api.bitfinex.com/ws");
+
+TRXUSD.onopen = function () {
+    TRXUSD.send(JSON.stringify({
+        "event": "subscribe",
+        "channel": "ticker",
+        "pair": "TRXUSD"
+    }))
+};
+
+TRXUSD.onmessage = function (msg) {
+    var response = JSON.parse(msg.data);
+    var hb = response[1];
+    if (hb != "hb") {
+        document.getElementById("trxBuying").innerHTML = "Buying Price: $" + response[3];
+        document.getElementById("trxSelling").innerHTML = "Selling Price: $" + response[1];
+        document.getElementById("trxVolume").innerHTML = "Daily Volume: $" + response[8];
+        document.getElementById("trxDaily").innerHTML = "Daily Change: $" + response[5];
+        document.getElementById("trxHigh").innerHTML = "Daily High: $" + response[9];
+        document.getElementById("trxLow").innerHTML = "Daily Low: $" + response[10];
+    };
+};
+
+var SANUSD = new WebSocket("wss://api.bitfinex.com/ws");
+
+SANUSD.onopen = function () {
+    SANUSD.send(JSON.stringify({
+        "event": "subscribe",
+        "channel": "ticker",
+        "pair": "SANUSD"
+    }))
+};
+
+SANUSD.onmessage = function (msg) {
+    var response = JSON.parse(msg.data);
+    var hb = response[1];
+    if (hb != "hb") {
+        document.getElementById("sanBuying").innerHTML = "Buying Price: $" + response[3];
+        document.getElementById("sanSelling").innerHTML = "Selling Price: $" + response[1];
+        document.getElementById("sanVolume").innerHTML = "Daily Volume: $" + response[8];
+        document.getElementById("sanDaily").innerHTML = "Daily Change: $" + response[5];
+        document.getElementById("sanHigh").innerHTML = "Daily High: $" + response[9];
+        document.getElementById("sanLow").innerHTML = "Daily Low: $" + response[10];
+    };
+};
+
+var XRPUSD = new WebSocket("wss://api.bitfinex.com/ws");
+
+XRPUSD.onopen = function () {
+    XRPUSD.send(JSON.stringify({
+        "event": "subscribe",
+        "channel": "ticker",
+        "pair": "XRPUSD"
+    }))
+};
+
+XRPUSD.onmessage = function (msg) {
+    var response = JSON.parse(msg.data);
+    var hb = response[1];
+    if (hb != "hb") {
+        document.getElementById("xrpBuying").innerHTML = "Buying Price: $" + response[3];
+        document.getElementById("xrpSelling").innerHTML = "Selling Price: $" + response[1];
+        document.getElementById("xrpVolume").innerHTML = "Daily Volume: $" + response[8];
+        document.getElementById("xrpDaily").innerHTML = "Daily Change: $" + response[5];
+        document.getElementById("xrpHigh").innerHTML = "Daily High: $" + response[9];
+        document.getElementById("xrpLow").innerHTML = "Daily Low: $" + response[10];
+    };
+};
+
+var DSHUSD = new WebSocket("wss://api.bitfinex.com/ws");
+
+DSHUSD.onopen = function () {
+    DSHUSD.send(JSON.stringify({
+        "event": "subscribe",
+        "channel": "ticker",
+        "pair": "DSHUSD"
+    }))
+};
+
+DSHUSD.onmessage = function (msg) {
+    var response = JSON.parse(msg.data);
+    var hb = response[1];
+    if (hb != "hb") {
+        document.getElementById("dshBuying").innerHTML = "Buying Price: $" + response[3];
+        document.getElementById("dshSelling").innerHTML = "Selling Price: $" + response[1];
+        document.getElementById("dshVolume").innerHTML = "Daily Volume: $" + response[8];
+        document.getElementById("dshDaily").innerHTML = "Daily Change: $" + response[5];
+        document.getElementById("dshHigh").innerHTML = "Daily High: $" + response[9];
+        document.getElementById("dshLow").innerHTML = "Daily Low: $" + response[10];
+    };
+};
+
+var XMRUSD = new WebSocket("wss://api.bitfinex.com/ws");
+
+XMRUSD.onopen = function () {
+    XMRUSD.send(JSON.stringify({
+        "event": "subscribe",
+        "channel": "ticker",
+        "pair": "XMRUSD"
+    }))
+};
+
+XMRUSD.onmessage = function (msg) {
+    var response = JSON.parse(msg.data);
+    var hb = response[1];
+    if (hb != "hb") {
+        document.getElementById("xmrBuying").innerHTML = "Buying Price: $" + response[3];
+        document.getElementById("xmrSelling").innerHTML = "Selling Price: $" + response[1];
+        document.getElementById("xmrVolume").innerHTML = "Daily Volume: $" + response[8];
+        document.getElementById("xmrDaily").innerHTML = "Daily Change: $" + response[5];
+        document.getElementById("xmrHigh").innerHTML = "Daily High: $" + response[9];
+        document.getElementById("xmrLow").innerHTML = "Daily Low: $" + response[10];
+    };
+};
+
+var QTMUSD = new WebSocket("wss://api.bitfinex.com/ws");
+
+QTMUSD.onopen = function () {
+    QTMUSD.send(JSON.stringify({
+        "event": "subscribe",
+        "channel": "ticker",
+        "pair": "QTMUSD"
+    }))
+};
+
+QTMUSD.onmessage = function (msg) {
+    var response = JSON.parse(msg.data);
+    var hb = response[1];
+    if (hb != "hb") {
+        document.getElementById("qtmBuying").innerHTML = "Buying Price: $" + response[3];
+        document.getElementById("qtmSelling").innerHTML = "Selling Price: $" + response[1];
+        document.getElementById("qtmVolume").innerHTML = "Daily Volume: $" + response[8];
+        document.getElementById("qtmDaily").innerHTML = "Daily Change: $" + response[5];
+        document.getElementById("qtmHigh").innerHTML = "Daily High: $" + response[9];
+        document.getElementById("qtmLow").innerHTML = "Daily Low: $" + response[10];
+    };
+};
+
 // JS for coin graphs goes here
 
 <!-- Bitcoin Graph -->
