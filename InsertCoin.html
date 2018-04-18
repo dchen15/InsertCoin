@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <title>InsertCoin</title>
     <link rel="stylesheet" href="Bitcoin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
 
@@ -28,33 +29,31 @@
             <a href="#"></a>
         </div>
         <div class="content">
-            <div id="loader"></div>
-            <div style="display:none;" id="myDiv">
-                <img src="logo.png" alt="Insert Coin">
-                <hr>
-                <a href={{previous}} class="previous">&#8249;</a>
-                <div class="graph">
-                    <div class={{message}}></div>
-                </div>
-                <a href={{next}} class="next">&#8250;</a>
 
-                <div class="table">
+            <img src="logo.png" alt="Insert Coin">
+            <hr>
+            <a href={{previous}} class="previous">&#8249;</a>
+            <div class="graph">
+                <div class={{message}}></div>
+            </div>
+            <a href={{next}} class="next">&#8250;</a>
 
-                    <table>
-                        <tr>
-                            <td id={{cell1}}>Loading...</td>
-                            <td id={{cell2}}>Loading...</td>
-                        </tr>
-                        <tr>
-                            <td id={{cell3}}>Loading...</td>
-                            <td id={{cell4}}>Loading...</td>
-                        </tr>
-                        <tr>
-                            <td id={{cell5}}>Loading...</td>
-                            <td id={{cell6}}>Loading...</td>
-                        </tr>
-                    </table>
-                </div>
+            <div class="table">
+
+                <table>
+                    <tr>
+                        <td id={{cell1}}><i class="fa fa-circle-o-notch fa-spin" style="font-size:24px"></i></td>
+                        <td id={{cell2}}><i class="fa fa-circle-o-notch fa-spin" style="font-size:24px"></i></td>
+                    </tr>
+                    <tr>
+                        <td id={{cell3}}><i class="fa fa-circle-o-notch fa-spin" style="font-size:24px"></i></td>
+                        <td id={{cell4}}><i class="fa fa-circle-o-notch fa-spin" style="font-size:24px"></i>.</td>
+                    </tr>
+                    <tr>
+                        <td id={{cell5}}><i class="fa fa-circle-o-notch fa-spin" style="font-size:24px"></i></td>
+                        <td id={{cell6}}><i class="fa fa-circle-o-notch fa-spin" style="font-size:24px"></i></td>
+                    </tr>
+                </table>
             </div>
         </div>
     </script>
