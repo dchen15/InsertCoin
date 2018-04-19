@@ -98,6 +98,14 @@
     	width: 50%;
 		
 	}
+	
+	.row {
+		margin-left: 5px;
+	}
+	.col-md-5 {
+		float: none;
+		margin-right: 55px;
+	}
 	 .graph {
 		width: 375px;
 	}
