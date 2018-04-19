@@ -1,8 +1,9 @@
- * {
+// Basic Layout Styles  
+
+* {
      box-sizing: border-box;
  }
 
-// Basic Layout Styles 
  body {
      background: #1276a8;
      margin: 0;
@@ -151,9 +152,8 @@
      font-size: 36px;
      margin-left: 50px;
  }
-// End of Layout Styles
 
-// Responsive styles
+// Media Queries
 
  @media screen and (max-height: 450px) {
      .sidenav {
@@ -200,5 +200,3 @@
              width: 100%;
          }
      }
-      
-      // End of Responsive Styles
