@@ -1,7 +1,8 @@
- * {
+// Basic Layout Styles  
+
+* {
      box-sizing: border-box;
  }
-
 
  body {
      background: #1276a8;
@@ -156,6 +157,7 @@
      margin-left: 50px;
  }
 
+// Media Queries
 
  @media screen and (max-height: 450px) {
      .sidenav {
