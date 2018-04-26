@@ -55,11 +55,42 @@
 		    </li>
             -->
                     </ul>
-                    <form class="form-inline mt-2 mt-md-0">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
+                    <div class="dropdown">
+					<button onclick="myFunction()" class="dropbtn">Dropdown</button>
+ 					 <div id="myDropdown" class="dropdown-content">
+    					<input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+   						<a href="#about">About</a>
+   						<a href="#base">Base</a>
+   						<a href="#blog">Blog</a>
+   						<a href="#contact">Contact</a>
+   						<a href="#custom">Custom</a>
+   						<a href="#support">Support</a>
+   						<a href="#tools">Tools</a>
+  					</div>
+				</div>
                 </div>
+				<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("myDropdown");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+        } else {
+            a[i].style.display = "none";
+        }
+    }
+}
+</script>
             </nav>
         </header>
 
@@ -138,14 +169,14 @@
                     <!-- /.col-lg-4 -->
                     <div class="col-lg-4">
                         <a href="InsertCoin.html#/Burstcoin"><img class="rounded-circle" src="burstcoin.png" width="140" height="140"></a>
-                        <h2>Burstcoin</h2>
+                        <h2 id="burstcoin">Burstcoin</h2>
                         <p></p>
 
                     </div>
                     <!-- /.col-lg-4 -->
                     <div class="col-lg-4">
                         <a href="Ethereum.html"><img class="rounded-circle" src="ethereum.png" width="140" height="140"></a>
-                        <h2>Ethereum</h2>
+                        <h2 id="ethereum">Ethereum</h2>
                         <p></p>
 
                     </div>
