@@ -6,16 +6,6 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 
-var myVar;
-
-function myFunction() {
-    myVar = setTimeout(showPage, 3000);
-}
-
-function showPage() {
-    document.getElementById("loader").style.display = "none";
-    document.getElementById("myDiv").style.display = "block";
-}
 var app = angular.module('Insert Coin', ['ngRoute']);
 
 app.config(function ($routeProvider, $locationProvider) {
@@ -41,10 +31,7 @@ app.config(function ($routeProvider, $locationProvider) {
 });
 
 app.controller('BitcoinController', function ($scope, $route, $routeParams, $location) {
-    $scope.$route = $route;
-    $scope.$location = $location;
-    $scope.$routeParams = $routeParams;
-    $scope.message = "btcwdgt-chart"
+    $scope.graph = "bitcoingraph.html";
     $scope.next = "#/Litecoin";
     $scope.previous = "#/Ethereum";
     $scope.cell1 = "btcBuying";
@@ -53,7 +40,6 @@ app.controller('BitcoinController', function ($scope, $route, $routeParams, $loc
     $scope.cell4 = "btcDaily";
     $scope.cell5 = "btcHigh";
     $scope.cell6 = "btcLow";
-
 });
 
 app.controller('LitecoinController', function ($scope) {
@@ -149,7 +135,7 @@ ETHUSD.onmessage = function (msg) {
         document.getElementById("ethLow").innerHTML = "Daily Low: $" + response[10];
     };
 };
-
+/*
 var IOTUSD = new WebSocket("wss://api.bitfinex.com/ws");
 
 IOTUSD.onopen = function () {
@@ -356,9 +342,10 @@ QTMUSD.onmessage = function (msg) {
         document.getElementById("qtmLow").innerHTML = "Daily Low: $" + response[10];
     };
 };
+*/
 
 // JS for coin graphs goes here
-
+/*
 <!-- Bitcoin Graph -->
 (function (b, i, t, C, O, I, N) {
     window.addEventListener('load', function () {
@@ -369,3 +356,4 @@ QTMUSD.onmessage = function (msg) {
         N.parentNode.insertBefore(I, N);
     }, false)
 })(document, 'script', 'https://widgets.bitcoin.com/widget.js', 'btcwdgt');
+*/

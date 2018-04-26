@@ -30,17 +30,21 @@
  }
 
  .graph {
-     max-width: 500px;
-     width: 100%;
-     max-height: 500px;
-     height: 100%;
+     width: 500px;
+     height: 500px;
      background-color: white;
      margin: 0 auto;
      border-radius: 5%;
      border: 1px solid black;
      float: left;
-     text-align: center;
  }
+
+ iframe {
+     height: 100%;
+     width: 100%;
+     border: none;
+ }
+
 
  table,
  th,
@@ -191,6 +195,13 @@
      .show {
          display: inline-flex;
          float: right;
+     }
+
+     @media(max-width: 550px) {
+         .graph {
+             height: 400px;
+             width: 400px;
+         }
      }
 
      @media(max-width:450px) {

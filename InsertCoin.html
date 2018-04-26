@@ -9,10 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+
 
 </head>
 
-<body onload="myFunction()" style="margin:0;" ng-app="Insert Coin">
+<body ng-app="Insert Coin">
     <script type="text/ng-template" id="pages/CoinTemplate.html">
         <ul>
             <li><a href="index.html">Insert Coin</a></li>
@@ -34,24 +36,24 @@
             <hr>
             <a href={{previous}} class="previous">&#8249;</a>
             <div class="graph">
-                <div class={{message}}></div>
+                <iframe src={{graph}} id="graph"></iframe>
             </div>
-            <a href={{next}} class="next">&#8250;</a>
+            <a href={{next}} class=" next ">&#8250;</a>
 
             <div class="table">
 
                 <table>
                     <tr>
-                        <td id={{cell1}}><i class="fa fa-circle-o-notch fa-spin" style="font-size:24px"></i></td>
-                        <td id={{cell2}}><i class="fa fa-circle-o-notch fa-spin" style="font-size:24px"></i></td>
+                        <td id={{cell1}}><i class="fa fa-circle-o-notch fa-spin " style="font-size:24px "></i></td>
+                        <td id={{cell2}}><i class="fa fa-circle-o-notch fa-spin " style="font-size:24px "></i></td>
                     </tr>
                     <tr>
-                        <td id={{cell3}}><i class="fa fa-circle-o-notch fa-spin" style="font-size:24px"></i></td>
-                        <td id={{cell4}}><i class="fa fa-circle-o-notch fa-spin" style="font-size:24px"></i>.</td>
+                        <td id={{cell3}}><i class="fa fa-circle-o-notch fa-spin " style="font-size:24px "></i></td>
+                        <td id={{cell4}}><i class="fa fa-circle-o-notch fa-spin " style="font-size:24px "></i>.</td>
                     </tr>
                     <tr>
-                        <td id={{cell5}}><i class="fa fa-circle-o-notch fa-spin" style="font-size:24px"></i></td>
-                        <td id={{cell6}}><i class="fa fa-circle-o-notch fa-spin" style="font-size:24px"></i></td>
+                        <td id={{cell5}}><i class="fa fa-circle-o-notch fa-spin " style="font-size:24px "></i></td>
+                        <td id={{cell6}}><i class="fa fa-circle-o-notch fa-spin " style="font-size:24px "></i></td>
                     </tr>
                 </table>
             </div>
@@ -59,12 +61,14 @@
     </script>
 
     <div id="main">
-        <div class="ng-view"></div>
-
-
+        <div class="ng-view "></div>
+        <div id="btcgraph"></div>
 
     </div>
-    <script src="script.js"></script>
+
+
+
+    <script src="script.js "></script>
 </body>
 
 </html>
