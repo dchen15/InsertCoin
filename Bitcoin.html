@@ -6,43 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Bitcoin.css">
     <title>Bitcoin</title>
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
+
 
 <body>
     <ul>
-        <li><a class="active" href="index.html">Insert Coin</a></li>
+        <li><a href="index.html">Insert Coin</a></li>
+        <li class="hide"><a href="#/Bitcoin">Bitcoin</a></li>
+        <li class="hide"><a href="#/Litecoin">Litecoin</a></li>
+        <li class="hide"><a href="#/Ethereum">Ethereum</a></li>
+        <li class="show"><span onclick="openNav()">&#9776;</span></li>
     </ul>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#/Bitcoin">Bitcoin</a>
+        <a href="#/Litecoin">Litecoin</a>
+        <a href="#/Ethereum">Ethereum</a>
+        <a href="#"></a>
+    </div>
     <div class="content">
+
         <img src="logo.png" alt="Insert Coin">
         <hr>
-        <a href="Dogecoin.html" class="previous">&#8249;</a>
-        <div class="coins">
-            <p>Bitcoin</p>
+        <a href={{previous}} class="previous">&#8249;</a>
+        <div class="graph">
+            <div id="btcgraph">
+
+            </div>
         </div>
-        <a href="Litecoin.html" class="next">&#8250;</a>
+        <a href={{next}} class=" next ">&#8250;</a>
+
         <div class="table">
+
             <table>
                 <tr>
-                    <td><iframe width="200" height="100" frameborder="0" scrolling="no" src="https://livealbany-my.sharepoint.com/personal/mdwoods_albany_edu/_layouts/15/WopiFrame.aspx?sourcedoc={365d145c-36a8-44a4-8ebe-b2978ae4ae52}&action=embedview&Item='Sheet2'!C2&wdHideGridlines=True&wdInConfigurator=True"></iframe></td>
-                    <td><iframe width="200" height="100" frameborder="0" scrolling="no" src="https://livealbany-my.sharepoint.com/personal/mdwoods_albany_edu/_layouts/15/WopiFrame.aspx?sourcedoc={365d145c-36a8-44a4-8ebe-b2978ae4ae52}&action=embedview&Item='Sheet2'!D2&wdHideGridlines=True&wdInConfigurator=True"></iframe></td>
+                    <td id="btcBuying"><i class="fa fa-circle-o-notch fa-spin " style="font-size:24px "></i></td>
+                    <td id="btcSelling"><i class="fa fa-circle-o-notch fa-spin " style="font-size:24px "></i></td>
                 </tr>
                 <tr>
-                    <td><iframe width="200" height="100" frameborder="0" scrolling="no" src="https://livealbany-my.sharepoint.com/personal/mdwoods_albany_edu/_layouts/15/WopiFrame.aspx?sourcedoc={365d145c-36a8-44a4-8ebe-b2978ae4ae52}&action=embedview&Item='Sheet2'!E2&wdHideGridlines=True&wdInConfigurator=True"></iframe></td>
-                    <td><iframe width="582" height="100" frameborder="0" scrolling="no" src="https://livealbany-my.sharepoint.com/personal/mdwoods_albany_edu/_layouts/15/WopiFrame.aspx?sourcedoc={365d145c-36a8-44a4-8ebe-b2978ae4ae52}&action=embedview&wdAllowInteractivity=False&Item='Sheet2'!A2%3AG2&wdHideGridlines=True&wdInConfigurator=True"></iframe></td>
+                    <td id="btcVolume"><i class="fa fa-circle-o-notch fa-spin " style="font-size:24px "></i></td>
+                    <td id="btcDaily"><i class="fa fa-circle-o-notch fa-spin " style="font-size:24px "></i>.</td>
                 </tr>
                 <tr>
-                    <td>stuff</td>
-                    <td>stuff</td>
-                </tr>
-                <tr>
-                    <td>stuff</td>
-                    <td>stuff</td>
+                    <td id="btcHigh"><i class="fa fa-circle-o-notch fa-spin " style="font-size:24px "></i></td>
+                    <td id="btcLow"><i class="fa fa-circle-o-notch fa-spin " style="font-size:24px "></i></td>
                 </tr>
             </table>
         </div>
     </div>
-
-
+    <script src="graphs.js "></script>
 </body>
 
 </html>

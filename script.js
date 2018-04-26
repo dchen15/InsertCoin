@@ -31,7 +31,7 @@ app.config(function ($routeProvider, $locationProvider) {
 });
 
 app.controller('BitcoinController', function ($scope, $route, $routeParams, $location) {
-    $scope.graph = "bitcoingraph.html";
+    $scope.graph = "Bitcoingraph.html";
     $scope.next = "#/Litecoin";
     $scope.previous = "#/Ethereum";
     $scope.cell1 = "btcBuying";
@@ -43,7 +43,7 @@ app.controller('BitcoinController', function ($scope, $route, $routeParams, $loc
 });
 
 app.controller('LitecoinController', function ($scope) {
-    $scope.message = "Litecoin";
+    $scope.graph = "Litecoingraph.html";
     $scope.next = "#/Ethereum";
     $scope.previous = "#/Bitcoin";
     $scope.cell1 = "ltcBuying";
@@ -55,7 +55,7 @@ app.controller('LitecoinController', function ($scope) {
 });
 
 app.controller('EthereumController', function ($scope) {
-    $scope.message = "Ethereum";
+    $scope.graph = "Ethereumgraph.html";
     $scope.next = "#/Bitcoin";
     $scope.previous = "#/Litecoin";
     $scope.cell1 = "ethBuying";
