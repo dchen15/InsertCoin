@@ -25,52 +25,15 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: "pages/CoinTemplate.html",
             controller: "EthereumController"
         })
-        .when('/Iota', {
-            templateUrl: "pages/CoinTemplate.html",
-            controller: "IotaController"
-        })
-        .when('/Tron', {
-            templateUrl: "pages/CoinTemplate.html",
-            controller: "TronController"
-        })
-        .when('/Ripple', {
-            templateUrl: "pages/CoinTemplate.html",
-            controller: "RippleController"
-        })
-        .when('/Dash', {
-            templateUrl: "pages/CoinTemplate.html",
-            controller: "DashController"
-        })
-        .when('/Monero', {
-            templateUrl: "pages/CoinTemplate.html",
-            controller: "MoneroController"
-        })
-        .when('/Neo', {
-            templateUrl: "pages/CoinTemplate.html",
-            controller: "NeoController"
-        })
-        .when('/Qtum', {
-            templateUrl: "pages/CoinTemplate.html",
-            controller: "QtumController"
-        })
-        .when('/OmiseGO', {
-            templateUrl: "pages/CoinTemplate.html",
-            controller: "OmiseGOController"
-        })
-        .when('/Santiment', {
-            templateUrl: "pages/CoinTemplate.html",
-            controller: "SantimentController"
-        })
-
         .otherwise({
             redirectTo: "/Bitcoin"
         });
 });
 
-app.controller('BitcoinController', function ($scope) {
+app.controller('BitcoinController', function ($scope, $route, $routeParams, $location) {
     $scope.graph = "Bitcoingraph.html";
     $scope.next = "#/Litecoin";
-    $scope.previous = "#/Santiment";
+    $scope.previous = "#/Ethereum";
     $scope.cell1 = "btcBuying";
     $scope.cell2 = "btcSelling";
     $scope.cell3 = "btcVolume";
@@ -93,7 +56,7 @@ app.controller('LitecoinController', function ($scope) {
 
 app.controller('EthereumController', function ($scope) {
     $scope.graph = "Ethereumgraph.html";
-    $scope.next = "#/Iota";
+    $scope.next = "#/Bitcoin";
     $scope.previous = "#/Litecoin";
     $scope.cell1 = "ethBuying";
     $scope.cell2 = "ethSelling";
@@ -103,118 +66,8 @@ app.controller('EthereumController', function ($scope) {
     $scope.cell6 = "ethLow";
 });
 
-app.controller('IotaController', function ($scope) {
-    $scope.graph = "Iotagraph.html";
-    $scope.next = "#/Tron";
-    $scope.previous = "#/Ethereum";
-    $scope.cell1 = "iotBuying";
-    $scope.cell2 = "iotSelling";
-    $scope.cell3 = "iotVolume";
-    $scope.cell4 = "iotDaily";
-    $scope.cell5 = "iotHigh";
-    $scope.cell6 = "iotLow";
-});
-
-app.controller('TronController', function ($scope) {
-    $scope.graph = "Trongraph.html";
-    $scope.next = "#/Ripple";
-    $scope.previous = "#/Iota";
-    $scope.cell1 = "trxBuying";
-    $scope.cell2 = "trxSelling";
-    $scope.cell3 = "trxVolume";
-    $scope.cell4 = "trxDaily";
-    $scope.cell5 = "trxHigh";
-    $scope.cell6 = "trxLow";
-});
-
-app.controller('RippleController', function ($scope) {
-    $scope.graph = "Ripplegraph.html";
-    $scope.next = "#/Dash";
-    $scope.previous = "#/Tron";
-    $scope.cell1 = "xrpBuying";
-    $scope.cell2 = "xrpSelling";
-    $scope.cell3 = "xrpVolume";
-    $scope.cell4 = "xrpDaily";
-    $scope.cell5 = "xrpHigh";
-    $scope.cell6 = "xrpLow";
-});
-
-app.controller('DashController', function ($scope) {
-    $scope.graph = "Dashgraph.html";
-    $scope.next = "#/Monero";
-    $scope.previous = "#/Ripple";
-    $scope.cell1 = "dshBuying";
-    $scope.cell2 = "dshSelling";
-    $scope.cell3 = "dshVolume";
-    $scope.cell4 = "dshDaily";
-    $scope.cell5 = "dshHigh";
-    $scope.cell6 = "dshLow";
-});
-
-app.controller('MoneroController', function ($scope) {
-    $scope.graph = "Monerograph.html";
-    $scope.next = "#/Neo";
-    $scope.previous = "#/Dash";
-    $scope.cell1 = "xmrBuying";
-    $scope.cell2 = "xmrSelling";
-    $scope.cell3 = "xmrVolume";
-    $scope.cell4 = "xmrDaily";
-    $scope.cell5 = "xmrHigh";
-    $scope.cell6 = "xmrLow";
-});
-
-app.controller('NeoController', function ($scope) {
-    $scope.graph = "graph.html";
-    $scope.next = "#/Qtum";
-    $scope.previous = "#/Monero";
-    $scope.cell1 = "neoBuying";
-    $scope.cell2 = "neoSelling";
-    $scope.cell3 = "neoVolume";
-    $scope.cell4 = "neoDaily";
-    $scope.cell5 = "neoHigh";
-    $scope.cell6 = "neoLow";
-});
-
-app.controller('QtumController', function ($scope) {
-    $scope.graph = "Qtumgraph.html";
-    $scope.next = "#/OmiseGO";
-    $scope.previous = "#/Neo";
-    $scope.cell1 = "qtmBuying";
-    $scope.cell2 = "qtmSelling";
-    $scope.cell3 = "qtmVolume";
-    $scope.cell4 = "qtmDaily";
-    $scope.cell5 = "qtmHigh";
-    $scope.cell6 = "qtmLow";
-});
-
-app.controller('OmiseGOController', function ($scope) {
-    $scope.graph = "OmiseGOgraph.html";
-    $scope.next = "#/Santiment";
-    $scope.previous = "#/Qtum";
-    $scope.cell1 = "omgBuying";
-    $scope.cell2 = "omgSelling";
-    $scope.cell3 = "omgVolume";
-    $scope.cell4 = "omgDaily";
-    $scope.cell5 = "omgHigh";
-    $scope.cell6 = "omgLow";
-});
-
-app.controller('SantimentController', function ($scope) {
-    $scope.graph = "Santimentgraph.html";
-    $scope.next = "#/Bitcoin";
-    $scope.previous = "#/OmiseGO";
-    $scope.cell1 = "sanBuying";
-    $scope.cell2 = "sanSelling";
-    $scope.cell3 = "sanVolume";
-    $scope.cell4 = "sanDaily";
-    $scope.cell5 = "sanHigh";
-    $scope.cell6 = "sanLow";
-});
-
 
 // JS for coin api goes here
-
-//Bitcoin
 var BTCUSD = new WebSocket("wss://api.bitfinex.com/ws");
 BTCUSD.onopen = function () {
     BTCUSD.send(JSON.stringify({
@@ -236,7 +89,7 @@ BTCUSD.onmessage = function (msg) {
         document.getElementById("btcLow").innerHTML = "Daily Low: $" + response[10];
     };
 };
-//Litecoin
+
 var LTCUSD = new WebSocket("wss://api.bitfinex.com/ws");
 
 LTCUSD.onopen = function () {
@@ -259,7 +112,7 @@ LTCUSD.onmessage = function (msg) {
         document.getElementById("ltcLow").innerHTML = "Daily Low: $" + response[10];
     };
 };
-//Ethereum
+
 var ETHUSD = new WebSocket("wss://api.bitfinex.com/ws");
 
 ETHUSD.onopen = function () {
@@ -282,7 +135,7 @@ ETHUSD.onmessage = function (msg) {
         document.getElementById("ethLow").innerHTML = "Daily Low: $" + response[10];
     };
 };
-//Iota
+/*
 var IOTUSD = new WebSocket("wss://api.bitfinex.com/ws");
 
 IOTUSD.onopen = function () {
@@ -305,7 +158,7 @@ IOTUSD.onmessage = function (msg) {
         document.getElementById("iotLow").innerHTML = "Daily Low: $" + response[10];
     };
 };
-//Neo
+
 var NEOUSD = new WebSocket("wss://api.bitfinex.com/ws");
 
 NEOUSD.onopen = function () {
@@ -328,7 +181,7 @@ NEOUSD.onmessage = function (msg) {
         document.getElementById("neoLow").innerHTML = "Daily Low: $" + response[10];
     };
 };
-//OmiseGO
+
 var OMGUSD = new WebSocket("wss://api.bitfinex.com/ws");
 
 OMGUSD.onopen = function () {
@@ -351,7 +204,7 @@ OMGUSD.onmessage = function (msg) {
         document.getElementById("omgLow").innerHTML = "Daily Low: $" + response[10];
     };
 };
-//Tron
+
 var TRXUSD = new WebSocket("wss://api.bitfinex.com/ws");
 
 TRXUSD.onopen = function () {
@@ -374,7 +227,7 @@ TRXUSD.onmessage = function (msg) {
         document.getElementById("trxLow").innerHTML = "Daily Low: $" + response[10];
     };
 };
-//Santiment
+
 var SANUSD = new WebSocket("wss://api.bitfinex.com/ws");
 
 SANUSD.onopen = function () {
@@ -397,7 +250,7 @@ SANUSD.onmessage = function (msg) {
         document.getElementById("sanLow").innerHTML = "Daily Low: $" + response[10];
     };
 };
-//Ripple
+
 var XRPUSD = new WebSocket("wss://api.bitfinex.com/ws");
 
 XRPUSD.onopen = function () {
@@ -420,7 +273,7 @@ XRPUSD.onmessage = function (msg) {
         document.getElementById("xrpLow").innerHTML = "Daily Low: $" + response[10];
     };
 };
-//Dashcoin
+
 var DSHUSD = new WebSocket("wss://api.bitfinex.com/ws");
 
 DSHUSD.onopen = function () {
@@ -443,7 +296,7 @@ DSHUSD.onmessage = function (msg) {
         document.getElementById("dshLow").innerHTML = "Daily Low: $" + response[10];
     };
 };
-//Monero
+
 var XMRUSD = new WebSocket("wss://api.bitfinex.com/ws");
 
 XMRUSD.onopen = function () {
@@ -466,7 +319,7 @@ XMRUSD.onmessage = function (msg) {
         document.getElementById("xmrLow").innerHTML = "Daily Low: $" + response[10];
     };
 };
-//Qtum
+
 var QTMUSD = new WebSocket("wss://api.bitfinex.com/ws");
 
 QTMUSD.onopen = function () {
@@ -489,3 +342,18 @@ QTMUSD.onmessage = function (msg) {
         document.getElementById("qtmLow").innerHTML = "Daily Low: $" + response[10];
     };
 };
+*/
+
+// JS for coin graphs goes here
+/*
+<!-- Bitcoin Graph -->
+(function (b, i, t, C, O, I, N) {
+    window.addEventListener('load', function () {
+        if (b.getElementById(C)) return;
+        I = b.createElement(i), N = b.getElementsByTagName(i)[0];
+        I.src = t;
+        I.id = C;
+        N.parentNode.insertBefore(I, N);
+    }, false)
+})(document, 'script', 'https://widgets.bitcoin.com/widget.js', 'btcwdgt');
+*/
