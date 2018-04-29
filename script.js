@@ -164,7 +164,7 @@ app.controller('MoneroController', function ($scope) {
 });
 
 app.controller('NeoController', function ($scope) {
-    $scope.graph = "graph.html";
+    $scope.graph = "Neograph.html";
     $scope.next = "#/Qtum";
     $scope.previous = "#/Monero";
     $scope.cell1 = "neoBuying";
