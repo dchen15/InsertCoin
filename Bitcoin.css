@@ -99,6 +99,7 @@ ul {
     width: 100%;
 }
 
+
 li {
     float: left;
 }
@@ -172,6 +173,12 @@ span {
     color: white;
 }
 
+@media(max-width:1355px) {
+    .hide {
+        display: none;
+    }
+}
+
 @media(max-width:850px) {
 
     .content img {
@@ -187,10 +194,6 @@ span {
         display: none;
     }
 
-
-    .hide {
-        display: none;
-    }
     .show {
         display: inline-flex;
         float: right;
