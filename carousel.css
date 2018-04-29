@@ -111,17 +111,17 @@
 	float: none;
 	margin-left: 10px;
 }
-#burstcoin {
+#iota {
 	float: none;
-	margin-left: 5px;
+	margin-left: 45px;
 }
 #ethereum {
 	float: none;
 	margin-left: 5px;
 }
-#nxt {
+#tron {
 	float: none;
-	margin-left: 35px;
+	margin-left: 37px;
 }
 #ripple {
 	float: none;
@@ -135,21 +135,21 @@
 	float: none;
 	margin-left: 15px;
 }
-#tether {
+#neo {
 	float: none;
-	margin-left: 23px;
+	margin-left: 37px;
 }
 #qtum {
 	float: none;
 	margin-left: 23px;
 }
-#bitcon {
+#omisego {
 	float: none;
-	margin-left: -10px;
+	margin-left: 10px;
 }
-#dogecoin {
+#santiment {
 	float: none;
-	margin-left: 3px;
+	margin-left: -3px;
 }
 .rounded-circle:hover {
 	transform: scale(1.1, 1.1);
