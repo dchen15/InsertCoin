@@ -69,6 +69,7 @@ app.config(function ($routeProvider, $locationProvider) {
 
 app.controller('BitcoinController', function ($scope) {
     $scope.graph = "Bitcoingraph.html";
+	$scope.graph2 = "Bitcoingraph2.html";
     $scope.next = "#/Litecoin";
     $scope.previous = "#/Santiment";
     $scope.cell1 = "btcBuying";

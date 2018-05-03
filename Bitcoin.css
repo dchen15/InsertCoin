@@ -37,15 +37,27 @@ body {
     border: 1px solid black;
     float: left;
 	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	
 }
 
-iframe {
+#graph {
     height: 100%;
     width: 100%;
     border: none;
-	overflow: hidden;
+	position: absolute;
 	margin: 0 auto;
-	display: block;
+	display: bloc;
+	top: 0;
+	left: 0;
+}
+
+#graph2 {
+	height: 100%;
+	width: 100%;
+	border: none;
+	display: none;
 }
 
 
@@ -229,4 +241,10 @@ span {
             body {
                 display: inline;
             }
+			#graph {
+				display: none;
+			}
+			#graph2 {
+				display: block;
+			}
         }
