@@ -156,7 +156,7 @@
 	transform: scale(1.1, 1.1);
 }
 
-// Media Queries
+
 
 @media only screen and (max-width: 300px) {
 	 .col-lg-4{
