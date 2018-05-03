@@ -39,6 +39,7 @@
     overflow: auto;
     border: 1px solid #ddd;
     z-index: 1;
+	margin-left: -150px;
 }
 
 .dropdown-content a {
@@ -157,7 +158,7 @@
 
 // Media Queries
 
-@media (max-width: 800px) {
+@media only screen and (max-width: 300px) {
 	 .col-lg-4{
 		
 		float: left;
@@ -168,7 +169,7 @@
 	}
 	
 	.row {
-		margin-left: 5px;
+		margin-right: 5px;
 	}
 	.col-md-5 {
 		float: none;
