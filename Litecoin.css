@@ -109,6 +109,8 @@
      font-size: 4em;
  }
 
+// Media Queries
+
  @media(max-width:800px) {
      .previous,
      .next {
