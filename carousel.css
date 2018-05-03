@@ -158,7 +158,7 @@
 
 
 
-@media only screen and (max-width: 300px) {
+@media (max-width: 800px) {
 	 .col-lg-4{
 		
 		float: left;
