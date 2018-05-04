@@ -69,7 +69,7 @@ app.config(function ($routeProvider, $locationProvider) {
 
 app.controller('BitcoinController', function ($scope) {
     $scope.graph = "Bitcoingraph.html";
-	$scope.graph2 = "Bitcoingraph2.html";
+    $scope.graph2 = "Bitcoingraph2.html";
     $scope.next = "#/Litecoin";
     $scope.previous = "#/Santiment";
     $scope.cell1 = "btcBuying";
@@ -82,6 +82,7 @@ app.controller('BitcoinController', function ($scope) {
 
 app.controller('LitecoinController', function ($scope) {
     $scope.graph = "Litecoingraph.html";
+    $scope.graph2 = "Litecoingraph2.html";
     $scope.next = "#/Ethereum";
     $scope.previous = "#/Bitcoin";
     $scope.cell1 = "ltcBuying";
@@ -94,6 +95,7 @@ app.controller('LitecoinController', function ($scope) {
 
 app.controller('EthereumController', function ($scope) {
     $scope.graph = "Ethereumgraph.html";
+    $scope.graph2 = "Ethereumgraph2.html";
     $scope.next = "#/Iota";
     $scope.previous = "#/Litecoin";
     $scope.cell1 = "ethBuying";
@@ -106,6 +108,7 @@ app.controller('EthereumController', function ($scope) {
 
 app.controller('IotaController', function ($scope) {
     $scope.graph = "Iotagraph.html";
+    $scope.graph2 = "Iotagraph2.html";
     $scope.next = "#/Tron";
     $scope.previous = "#/Ethereum";
     $scope.cell1 = "iotBuying";
@@ -118,6 +121,7 @@ app.controller('IotaController', function ($scope) {
 
 app.controller('TronController', function ($scope) {
     $scope.graph = "Trongraph.html";
+    $scope.graph2 = "Trongraph2.html";
     $scope.next = "#/Ripple";
     $scope.previous = "#/Iota";
     $scope.cell1 = "trxBuying";
@@ -130,6 +134,7 @@ app.controller('TronController', function ($scope) {
 
 app.controller('RippleController', function ($scope) {
     $scope.graph = "Ripplegraph.html";
+    $scope.graph2 = "Ripplegraph2.html";
     $scope.next = "#/Dash";
     $scope.previous = "#/Tron";
     $scope.cell1 = "xrpBuying";
@@ -142,6 +147,7 @@ app.controller('RippleController', function ($scope) {
 
 app.controller('DashController', function ($scope) {
     $scope.graph = "Dashgraph.html";
+    $scope.graph2 = "Dashgraph2.html";
     $scope.next = "#/Monero";
     $scope.previous = "#/Ripple";
     $scope.cell1 = "dshBuying";
@@ -154,6 +160,7 @@ app.controller('DashController', function ($scope) {
 
 app.controller('MoneroController', function ($scope) {
     $scope.graph = "Monerograph.html";
+    $scope.graph2 = "Monerograph2.html";
     $scope.next = "#/Neo";
     $scope.previous = "#/Dash";
     $scope.cell1 = "xmrBuying";
@@ -166,6 +173,7 @@ app.controller('MoneroController', function ($scope) {
 
 app.controller('NeoController', function ($scope) {
     $scope.graph = "Neograph.html";
+    $scope.graph2 = "Neograph2.html";
     $scope.next = "#/Qtum";
     $scope.previous = "#/Monero";
     $scope.cell1 = "neoBuying";
@@ -178,6 +186,7 @@ app.controller('NeoController', function ($scope) {
 
 app.controller('QtumController', function ($scope) {
     $scope.graph = "Qtumgraph.html";
+    $scope.graph2 = "Qtumgraph2.html";
     $scope.next = "#/OmiseGO";
     $scope.previous = "#/Neo";
     $scope.cell1 = "qtmBuying";
@@ -190,6 +199,7 @@ app.controller('QtumController', function ($scope) {
 
 app.controller('OmiseGOController', function ($scope) {
     $scope.graph = "OmiseGOgraph.html";
+    $scope.graph2 = "OmiseGOgraph2.html";
     $scope.next = "#/Santiment";
     $scope.previous = "#/Qtum";
     $scope.cell1 = "omgBuying";
@@ -202,6 +212,7 @@ app.controller('OmiseGOController', function ($scope) {
 
 app.controller('SantimentController', function ($scope) {
     $scope.graph = "Santimentgraph.html";
+    $scope.graph2 = "Santimentgraph2.html";
     $scope.next = "#/Bitcoin";
     $scope.previous = "#/OmiseGO";
     $scope.cell1 = "sanBuying";
@@ -228,8 +239,8 @@ BTCUSD.onopen = function () {
 BTCUSD.onmessage = function (msg) {
     var response = JSON.parse(msg.data);
     var hb = response[1];
-	var x = response[8];
-	x = Math.round(x * 100) / 100;
+    var x = response[8];
+    x = Math.round(x * 100) / 100;
     if (hb != "hb") {
         document.getElementById("btcBuying").innerHTML = "Buying Price: $" + response[3];
         document.getElementById("btcSelling").innerHTML = "Selling Price: $" + response[1];
@@ -253,8 +264,8 @@ LTCUSD.onopen = function () {
 LTCUSD.onmessage = function (msg) {
     var response = JSON.parse(msg.data);
     var hb = response[1];
-	var x = response[8];
-	x = Math.round(x * 100) / 100;
+    var x = response[8];
+    x = Math.round(x * 100) / 100;
     if (hb != "hb") {
         document.getElementById("ltcBuying").innerHTML = "Buying Price: $" + response[3];
         document.getElementById("ltcSelling").innerHTML = "Selling Price: $" + response[1];
@@ -278,8 +289,8 @@ ETHUSD.onopen = function () {
 ETHUSD.onmessage = function (msg) {
     var response = JSON.parse(msg.data);
     var hb = response[1];
-	var x = response[8];
-	x = Math.round(x * 100) / 100;
+    var x = response[8];
+    x = Math.round(x * 100) / 100;
     if (hb != "hb") {
         document.getElementById("ethBuying").innerHTML = "Buying Price: $" + response[3];
         document.getElementById("ethSelling").innerHTML = "Selling Price: $" + response[1];
@@ -303,8 +314,8 @@ IOTUSD.onopen = function () {
 IOTUSD.onmessage = function (msg) {
     var response = JSON.parse(msg.data);
     var hb = response[1];
-	var x = response[8];
-	x = Math.round(x * 100) / 100;
+    var x = response[8];
+    x = Math.round(x * 100) / 100;
     if (hb != "hb") {
         document.getElementById("iotBuying").innerHTML = "Buying Price: $" + response[3];
         document.getElementById("iotSelling").innerHTML = "Selling Price: $" + response[1];
@@ -328,8 +339,8 @@ NEOUSD.onopen = function () {
 NEOUSD.onmessage = function (msg) {
     var response = JSON.parse(msg.data);
     var hb = response[1];
-	var x = response[8];
-	x = Math.round(x * 100) / 100;
+    var x = response[8];
+    x = Math.round(x * 100) / 100;
     if (hb != "hb") {
         document.getElementById("neoBuying").innerHTML = "Buying Price: $" + response[3];
         document.getElementById("neoSelling").innerHTML = "Selling Price: $" + response[1];
@@ -353,8 +364,8 @@ OMGUSD.onopen = function () {
 OMGUSD.onmessage = function (msg) {
     var response = JSON.parse(msg.data);
     var hb = response[1];
-	var x = response[8];
-	x = Math.round(x * 100) / 100;
+    var x = response[8];
+    x = Math.round(x * 100) / 100;
     if (hb != "hb") {
         document.getElementById("omgBuying").innerHTML = "Buying Price: $" + response[3];
         document.getElementById("omgSelling").innerHTML = "Selling Price: $" + response[1];
@@ -378,8 +389,8 @@ TRXUSD.onopen = function () {
 TRXUSD.onmessage = function (msg) {
     var response = JSON.parse(msg.data);
     var hb = response[1];
-	var x = response[8];
-	x = Math.round(x * 100) / 100;
+    var x = response[8];
+    x = Math.round(x * 100) / 100;
     if (hb != "hb") {
         document.getElementById("trxBuying").innerHTML = "Buying Price: $" + response[3];
         document.getElementById("trxSelling").innerHTML = "Selling Price: $" + response[1];
@@ -403,8 +414,8 @@ SANUSD.onopen = function () {
 SANUSD.onmessage = function (msg) {
     var response = JSON.parse(msg.data);
     var hb = response[1];
-	var x = response[8];
-	x = Math.round(x * 100) / 100;
+    var x = response[8];
+    x = Math.round(x * 100) / 100;
     if (hb != "hb") {
         document.getElementById("sanBuying").innerHTML = "Buying Price: $" + response[3];
         document.getElementById("sanSelling").innerHTML = "Selling Price: $" + response[1];
@@ -428,8 +439,8 @@ XRPUSD.onopen = function () {
 XRPUSD.onmessage = function (msg) {
     var response = JSON.parse(msg.data);
     var hb = response[1];
-	var x = response[8];
-	x = Math.round(x * 100) / 100;
+    var x = response[8];
+    x = Math.round(x * 100) / 100;
     if (hb != "hb") {
         document.getElementById("xrpBuying").innerHTML = "Buying Price: $" + response[3];
         document.getElementById("xrpSelling").innerHTML = "Selling Price: $" + response[1];
@@ -453,8 +464,8 @@ DSHUSD.onopen = function () {
 DSHUSD.onmessage = function (msg) {
     var response = JSON.parse(msg.data);
     var hb = response[1];
-	var x = response[8];
-	x = Math.round(x * 100) / 100;
+    var x = response[8];
+    x = Math.round(x * 100) / 100;
     if (hb != "hb") {
         document.getElementById("dshBuying").innerHTML = "Buying Price: $" + response[3];
         document.getElementById("dshSelling").innerHTML = "Selling Price: $" + response[1];
@@ -478,8 +489,8 @@ XMRUSD.onopen = function () {
 XMRUSD.onmessage = function (msg) {
     var response = JSON.parse(msg.data);
     var hb = response[1];
-	var x = response[8];
-	x = Math.round(x * 100) / 100;
+    var x = response[8];
+    x = Math.round(x * 100) / 100;
     if (hb != "hb") {
         document.getElementById("xmrBuying").innerHTML = "Buying Price: $" + response[3];
         document.getElementById("xmrSelling").innerHTML = "Selling Price: $" + response[1];
@@ -503,8 +514,8 @@ QTMUSD.onopen = function () {
 QTMUSD.onmessage = function (msg) {
     var response = JSON.parse(msg.data);
     var hb = response[1];
-	var x = response[8];
-	x = Math.round(x * 100) / 100;
+    var x = response[8];
+    x = Math.round(x * 100) / 100;
     if (hb != "hb") {
         document.getElementById("qtmBuying").innerHTML = "Buying Price: $" + response[3];
         document.getElementById("qtmSelling").innerHTML = "Selling Price: $" + response[1];
